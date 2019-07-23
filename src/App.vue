@@ -4,9 +4,11 @@
     :class="$store.state.darkMode===true ? 'darkmode' : 'lightmode'"
     id="app"
   >
+    <SpeedDial />
     <Snackbar />
-    <transition name="fade" mode="out-in" >
-      <router-view></router-view>
+    <h1 class="path">{{$route.name}}</h1>
+    <transition name="fade" mode="out-in">
+      <router-view class="page"></router-view>
     </transition>
     <BottomNav />
   </v-app>
@@ -17,10 +19,12 @@ import Vue from "vue";
 
 import BottomNav from "@/components/BottomNav.vue";
 import Snackbar from "@/components/Snackbar.vue";
+import SpeedDial from "@/components/SpeedDial.vue";
 export default Vue.extend({
   components: {
     BottomNav,
     Snackbar,
+    SpeedDial,
   },
 });
 </script>
@@ -59,9 +63,17 @@ export default Vue.extend({
   }
 }
 
+.page {
+  padding-top: 40px;
+}
+.path {
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-property: opacity;
   transition-timing-function: ease;
 }

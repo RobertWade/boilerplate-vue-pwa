@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
     <p>This is some text</p>
     <BaseComponent />
   </div>
