@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    {{msg}}
+    <v-date-picker color="primary" :dark="false" v-model="picker" :landscape="landscape" :reactive="reactive"></v-date-picker>
   </div>
 </template>
 
@@ -9,7 +9,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class BaseComponent extends Vue {
-  @Prop() private msg!: string;
+  public picker: string = new Date().toISOString().substr(0, 10);
+  public landscape: boolean = false;
+  public reactive: boolean = true;
 }
 </script>
 

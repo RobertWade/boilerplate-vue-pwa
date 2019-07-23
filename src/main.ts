@@ -12,10 +12,10 @@ import colors from "vuetify/es5/util/colors";
 
 Vue.use(Vuetify, {
   theme: {
-    primary: "#2337e9", // #E53935
+    primary: "#e93a23", // #E53935
     secondary: "#363638", // #FFCDD2
-    accent: colors.indigo.base // #3F51B5
-  }
+    accent: colors.indigo.base, // #3F51B5
+  },
 });
 
 Vue.config.productionTip = false;
@@ -23,5 +23,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
