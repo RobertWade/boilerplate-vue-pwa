@@ -1,17 +1,26 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <router-view />
+    <BottomNav/>
+  </v-app>
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+
+import BottomNav from "@/components/BottomNav.vue";
+export default Vue.extend({
+  components:{
+    BottomNav
+  }
+});
+</script>
+
+
 <style lang="scss">
-@import '@/assets/scss/main.scss';
+@import "@/assets/scss/main.scss";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
