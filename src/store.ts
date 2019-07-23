@@ -8,6 +8,7 @@ export default new Vuex.Store({
     darkMode: false,
     showSnackbar: false,
     snackText: "Snackbar Text",
+    rating: 0,
   },
   mutations: {
     toggleSnackbar(state, snackState: boolean) {

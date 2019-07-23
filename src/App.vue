@@ -65,6 +65,7 @@ export default Vue.extend({
 
 .page {
   padding-top: 40px;
+  margin-bottom: 60px;
 }
 .path {
   margin-top: 5px;
