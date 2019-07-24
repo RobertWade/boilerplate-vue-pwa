@@ -4,9 +4,13 @@
     :class="$store.state.darkMode===true ? 'darkmode' : 'lightmode'"
     id="app"
   >
-    <SpeedDial />
     <Snackbar />
-    <h1 class="path">{{$route.name}}</h1>
+    <div class="head">
+      <SpeedDial />
+      <h2 class="path">{{$route.name}}</h2>
+    </div>
+    <div class="space-top"></div>
+
     <transition name="fade" mode="out-in">
       <router-view class="page"></router-view>
     </transition>
@@ -62,9 +66,21 @@ export default Vue.extend({
     }
   }
 }
+.head{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height:60px;
+  background:white;
+  padding: 5px 15px;
+  z-index:10;
+}
+.space-top{
+  height:50px;
+}
 
 .page {
-  padding-top: 40px;
   margin-bottom: 60px;
 }
 .path {

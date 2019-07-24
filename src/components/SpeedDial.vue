@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <v-speed-dial
-      fixed
+      absolute
       v-model="fab"
       :top="top"
       :bottom="bottom"
@@ -84,6 +84,8 @@ button {
   }
 }
 .profile {
+  height:45px;
+  width: 45px;
   border: 2px solid white;
   background: blue;
   overflow: hidden;
