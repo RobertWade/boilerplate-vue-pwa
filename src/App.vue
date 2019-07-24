@@ -36,6 +36,9 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "@/assets/scss/main.scss";
+html {
+  background: white;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -46,12 +49,21 @@ export default Vue.extend({
 
 .darkmode {
   transition: all 0.4s linear;
+  .head {
+    transition: all 0.4s linear;
+    background: #303030;
+  }
   .icon {
     color: white;
   }
 }
 
 .lightmode {
+  background: white;
+  .head {
+    transition: all 0.4s linear;
+    background: fafafa;
+  }
   p {
     color: black;
   }
@@ -66,18 +78,17 @@ export default Vue.extend({
     }
   }
 }
-.head{
+.head {
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height:60px;
-  background:white;
+  height: 60px;
   padding: 5px 15px;
-  z-index:10;
+  z-index: 10;
 }
-.space-top{
-  height:50px;
+.space-top {
+  height: 50px;
 }
 
 .page {

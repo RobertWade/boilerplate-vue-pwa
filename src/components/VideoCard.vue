@@ -10,19 +10,24 @@
       <v-btn class="readmore" flat color="primary">Read more</v-btn>
       <div class="flexrow" @click="like()">
         <p>{{likes}}</p>
-        <img
-          v-if="!liked && $store.state.darkMode == false"
-          class="icon"
-          src="@/assets/icons/like-empty.png"
-          alt
-        />
-        <img
-          v-if="!liked && $store.state.darkMode == true"
-          class="icon"
-          src="@/assets/icons/like-empty-white.png"
-          alt
-        />
-        <img v-if="liked" class="icon" src="@/assets/icons/liked.png" alt />
+        <div class="wrapper">
+          <transition name="fade" mode="out-in">
+            <div v-if="!liked && $store.state.darkMode == false">
+              <img class="icon" src="@/assets/icons/like-empty.png" alt />
+            </div>
+          </transition>
+
+          <transition name="fade" mode="out-in">
+            <div v-if="!liked && $store.state.darkMode == true">
+              <img class="icon" src="@/assets/icons/like-empty-white.png" alt />
+            </div>
+          </transition>
+          <transition name="fade" mode="out-in">
+            <div v-if="liked">
+              <img class="icon" src="@/assets/icons/liked.png" alt />
+            </div>
+          </transition>
+        </div>
       </div>
     </div>
   </div>
@@ -38,9 +43,9 @@ export default class BaseComponent extends Vue {
   @Prop() private source!: string;
   public like(): void {
     if (!this.liked) {
-         this.likes++;
+      this.likes++;
     } else {
-        this.likes--;
+      this.likes--;
     }
     this.liked = !this.liked;
   }
@@ -71,6 +76,16 @@ export default class BaseComponent extends Vue {
   }
 }
 
+.wrapper {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  img {
+    transition: all 0.4s linear;
+    position: absolute;
+  }
+}
+
 .picwrapper {
   overflow: hidden;
   width: 100%;
@@ -91,6 +106,7 @@ export default class BaseComponent extends Vue {
   align-items: center;
   justify-content: space-between;
   .icon {
+    transition: all 0.4s linear;
     height: 20px;
     width: 20px;
   }
@@ -98,5 +114,12 @@ export default class BaseComponent extends Vue {
 
 .flexrow {
   display: flex;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transform: scale(1.07);
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
