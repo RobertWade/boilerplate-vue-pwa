@@ -2,8 +2,7 @@
   <div class="dms">
     <v-text-field v-model="filtername" label="Search" placeholder="Profilname" box></v-text-field>
     <MessagePreview
-      v-for="(message,i) in messages"
-      v-if="message.name.includes(filtername)"
+      v-for="(message,i) in filteredList"
       :key="i"
       :source="message.source"
       :name="message.name"
@@ -22,8 +21,9 @@ import MessagePreview from "@/components/MessagePreview.vue";
   },
 })
 export default class Home extends Vue {
+
   public filtername: string = "";
-  public messages: object[] = [
+  public messages: any = [
     {
       name: "Maria Musterfrau",
       source: "https://source.unsplash.com/200x300/?face,woman",
@@ -72,7 +72,7 @@ export default class Home extends Vue {
   ];
 
   get filteredList() {
-    return this.messages.filter((message) => {
+    return this.messages.filter((message: any) => {
       return message.name.toLowerCase().includes(this.filtername.toLowerCase());
     });
   }
