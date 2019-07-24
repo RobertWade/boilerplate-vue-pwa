@@ -7,7 +7,11 @@
     <Snackbar />
     <div class="head">
       <SpeedDial />
-      <h2 class="path">{{$route.name}}</h2>
+      <h2 v-if="$route.name !== 'messages'" class="path">{{$route.name}}</h2>
+      <h2 @click="$router.go(-1)" v-else class="path">
+        <v-icon>chevron_left</v-icon>
+        {{$route.name}}
+      </h2>
     </div>
     <div class="space-top"></div>
 
@@ -62,7 +66,7 @@ html {
   background: white;
   .head {
     transition: all 0.4s linear;
-    background: fafafa;
+    background: white;
   }
   p {
     color: black;
@@ -87,6 +91,13 @@ html {
   padding: 5px 15px;
   z-index: 10;
 }
+
+.lightmode {
+  background: white !important;
+}
+.darkmode {
+  background: #303030 !important;
+}
 .space-top {
   height: 50px;
 }
@@ -95,7 +106,10 @@ html {
   margin-bottom: 60px;
 }
 .path {
+  cursor: pointer;
   margin-top: 5px;
+  display: flex;
+  justify-content: center;
   text-transform: capitalize;
 }
 
