@@ -114,7 +114,7 @@ export default class BaseComponent extends Vue {
 
 .flexrow {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 .fade-enter-active,
 .fade-leave-active {
