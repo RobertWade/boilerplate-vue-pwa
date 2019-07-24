@@ -31,6 +31,7 @@
         <img v-else src="@/assets/icons/component-white.png" alt />
       </v-btn>
     </v-bottom-nav>
+    <div value="messages"></div>
   </div>
 </template>
 
@@ -39,7 +40,12 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class BaseComponent extends Vue {
-  public bottomNav: string = "recent";
+  get bottomNav() {
+    return this.$store.state.bottomNav;
+  }
+  set bottomNav(recent) {
+   this.$store.state.bottomNav = recent;
+  }
 }
 </script>
 

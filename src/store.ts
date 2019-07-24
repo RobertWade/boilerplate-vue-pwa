@@ -9,6 +9,7 @@ export default new Vuex.Store({
     showSnackbar: false,
     snackText: "Snackbar Text",
     rating: 0,
+    bottomNav: "messages",
   },
   mutations: {
     toggleSnackbar(state, snackState: boolean) {

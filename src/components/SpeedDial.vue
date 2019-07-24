@@ -18,7 +18,7 @@
           <img src="@/assets/profile.jpg" alt />
         </v-btn>
       </template>
-      <v-btn @click="$router.push({name:'messages'})" fab dark small color="white">
+      <v-btn @click="openMessages" fab dark small color="white">
         <img src="@/assets/icons/message.png" alt />
       </v-btn>
       <v-btn fab dark small color="white">
@@ -46,7 +46,10 @@ export default class BaseComponent extends Vue {
   public bottom: boolean = false;
   public left: boolean = false;
   public transition: string = "slide-y-reverse-transition";
-
+  public openMessages(): void {
+    this.$store.state.bottomNav = null;
+    this.$router.push({name: "messages"});
+  }
   get activeFab() {
     switch (this.tabs) {
       case "one":
