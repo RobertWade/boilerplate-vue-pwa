@@ -78,8 +78,8 @@ export default class BaseComponent extends Vue {
 
 .wrapper {
   position: relative;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   img {
     transition: all 0.4s linear;
     position: absolute;
@@ -107,13 +107,14 @@ export default class BaseComponent extends Vue {
   justify-content: space-between;
   .icon {
     transition: all 0.4s linear;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
   }
 }
 
 .flexrow {
   display: flex;
+  align-items: center;
 }
 .fade-enter-active,
 .fade-leave-active {

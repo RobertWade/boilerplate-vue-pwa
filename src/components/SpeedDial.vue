@@ -47,7 +47,6 @@ export default class BaseComponent extends Vue {
   public left: boolean = false;
   public transition: string = "slide-y-reverse-transition";
   public openMessages(): void {
-    this.$store.state.bottomNav = null;
     this.$router.push({name: "messages"});
   }
   get activeFab() {
