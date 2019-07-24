@@ -18,3 +18,10 @@ import VideoCard from "@/components/VideoCard.vue";
 })
 export default class Home extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+.home{
+  padding: 15px;
+}
+</style>
+

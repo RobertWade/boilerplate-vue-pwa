@@ -14,12 +14,12 @@
       <template v-slot:activator>
         <v-btn v-model="fab" class="profile" fab>
           <!-- <v-icon color="white">account_circle</v-icon>
-          <v-icon color="white">close</v-icon> -->
-          <img src="@/assets/profile.jpg" alt="">
+          <v-icon color="white">close</v-icon>-->
+          <img src="@/assets/profile.jpg" alt />
         </v-btn>
       </template>
-      <v-btn fab dark small color="white">
-        <v-icon color="primary">edit</v-icon>
+      <v-btn @click="$router.push({name:'messages'})" fab dark small color="white">
+        <img src="@/assets/icons/message.png" alt />
       </v-btn>
       <v-btn fab dark small color="white">
         <v-icon color="primary">add</v-icon>
@@ -71,16 +71,24 @@ export default class BaseComponent extends Vue {
 #create .v-btn--floating {
   position: relative;
 }
-
-.profile{
-  border:2px solid white;
-  background:blue;
+button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0;
+  img {
+    width: 18px;
+  }
+}
+.profile {
+  border: 2px solid white;
+  background: blue;
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  img{
-    width:100%;
+  img {
+    width: 100%;
   }
 }
 </style>

@@ -17,5 +17,6 @@
 .settings {
   display: flex;
   flex-direction: column;
+  padding: 15px;
 }
 </style>

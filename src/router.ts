@@ -32,5 +32,10 @@ export default new Router({
       name: "components",
       component: () => import("./views/Components.vue"),
     },
+    {
+      path: "/messages",
+      name: "messages",
+      component: () => import("./views/DMs.vue"),
+    },
   ],
 });

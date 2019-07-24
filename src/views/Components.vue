@@ -30,6 +30,9 @@ export default class Components extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.components{
+  padding: 15px;
+}
 h2 {
   margin-top: 15px;
 }

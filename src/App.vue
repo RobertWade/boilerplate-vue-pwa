@@ -37,7 +37,7 @@ export default Vue.extend({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding: 15px;
+  padding-top: 15px;
 }
 
 .darkmode {
