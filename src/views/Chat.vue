@@ -1,6 +1,6 @@
 <template>
   <div class="chat">
-    <div id="chatwindow" class="chatwindow" v-chat-scroll>
+    <div id="chatwindow" class="chatwindow" >
       <div
         v-for="(message,i) in chatHistory"
         :key="i"
