@@ -7,7 +7,7 @@
         :class="['message', message.id!=='myID'? 'answer':'']"
       >{{message.text}}</div>
     </div>
-    <div class="messageinput-wrapper">
+    <div :class="$store.state.darkMode===true ? 'darkmode' : 'lightmode'" class="messageinput-wrapper">
       <v-text-field
         v-model="messageInput"
         label="Outline"
@@ -25,25 +25,24 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
-  components: {}
+  components: {},
 })
 export default class Chat extends Vue {
   public chatHistory: any = [
     { text: "Hey, how's it going. Want to meet up today?", id: "23456789" },
     { text: "Sure where would you like to go?", id: "myID" },
-    { text: "Let's just go to the city and relax", id: "23456789" }
+    { text: "Let's just go to the city and relax", id: "23456789" },
   ];
   public messageInput: string = "";
   public message: any = {
     name: "Maria Musterfrau",
     source: "https://source.unsplash.com/200x300/?face,woman",
-    text: "Hey wie geht es dir?"
+    text: "Hey wie geht es dir?",
   };
-  answer(): void {
-    console.log("TEST");
+  public answer(): void {
     this.chatHistory.push({
       text: this.messageInput,
-      id: "myID"
+      id: "myID",
     });
     this.messageInput = "";
   }

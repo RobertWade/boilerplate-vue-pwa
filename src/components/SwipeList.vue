@@ -47,7 +47,6 @@ export default {
   methods: {
     transitionEnd(array, index) {
       // Delete item from array after callback from SwipeoutItem
-      console.log("Delete item - " + array[index]);
       array.splice(index, 1);
     },
     resetData() {
