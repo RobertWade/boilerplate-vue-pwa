@@ -7,8 +7,8 @@ import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
 
-// import * as VueChatScroll from "vue-chat-scroll";
-// Vue.use(VueChatScroll);
+import VueChatScroll from "vue-chat-scroll";
+Vue.use(VueChatScroll);
 
 
 // Helpers

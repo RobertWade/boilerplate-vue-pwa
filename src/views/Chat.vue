@@ -1,13 +1,16 @@
 <template>
   <div class="chat">
-    <div id="chatwindow" class="chatwindow" >
+    <div id="chatwindow" class="chatwindow" v-chat-scroll>
       <div
         v-for="(message,i) in chatHistory"
         :key="i"
         :class="['message', message.id!=='myID'? 'answer':'']"
       >{{message.text}}</div>
     </div>
-    <div :class="$store.state.darkMode===true ? 'darkmode' : 'lightmode'" class="messageinput-wrapper">
+    <div
+      :class="$store.state.darkMode===true ? 'darkmode' : 'lightmode'"
+      class="messageinput-wrapper"
+    >
       <v-text-field
         v-model="messageInput"
         label="Outline"
