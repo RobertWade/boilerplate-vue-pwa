@@ -1,5 +1,5 @@
 <template>
-  <div class="messagePreview">
+  <div class="messagePreview" @click="$router.push({name:'chat'})">
     <div class="profile-pic">
       <img :src="source" alt />
     </div>

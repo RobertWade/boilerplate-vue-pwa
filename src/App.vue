@@ -7,7 +7,7 @@
     <Snackbar />
     <div class="head">
       <SpeedDial />
-      <h2 v-if="$route.name !== 'messages'" class="path">{{$route.name}}</h2>
+      <h2 v-if="$route.name !== 'messages' && $route.name !=='chat'" class="path">{{$route.name}}</h2>
       <h2 @click="$router.go(-1)" v-else class="path">
         <v-icon>chevron_left</v-icon>
         {{$route.name}}

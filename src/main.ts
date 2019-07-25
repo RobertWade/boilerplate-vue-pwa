@@ -7,6 +7,9 @@ import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
 
+import VueChatScroll from "vue-chat-scroll";
+Vue.use(VueChatScroll);
+
 // Helpers
 import colors from "vuetify/es5/util/colors";
 

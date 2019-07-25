@@ -1,7 +1,7 @@
 <template>
   <v-bottom-nav
     :dark="$store.state.darkMode"
-    :class="['bottomnav', $route.name==='messages'?'hide':'nothide',$store.state.darkMode===true ? 'darkmode' : 'lightmode']"
+    :class="['bottomnav', $route.name==='messages' || $route.name==='chat' ?'hide':'nothide',$store.state.darkMode===true ? 'darkmode' : 'lightmode']"
     :active.sync="bottomNav"
     :value="true"
     fixed
@@ -51,7 +51,6 @@ export default class BaseComponent extends Vue {
 img {
   height: 25px;
 }
-
 
 .bottomenav {
   transition: all 0.4s linear;
